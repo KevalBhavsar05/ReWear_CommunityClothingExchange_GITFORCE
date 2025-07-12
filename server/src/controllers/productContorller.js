@@ -4,7 +4,7 @@ import Product from "../models/product.js";
 export const createProduct = async (req, res) => {
   try {
     const { title, description, category, type, size, condition, tags } =
-      req.body;
+    req.body;
     const userId = req.user._id;
     const baseUrl = `${req.protocol}://${req.get("host")}`;
 
@@ -15,6 +15,7 @@ export const createProduct = async (req, res) => {
 
     const product = await Product.create({
       ...req.body,
+      approved: false,
       images: imageUrls,
       owner: userId,
     });
@@ -28,7 +29,7 @@ export const createProduct = async (req, res) => {
 // 2. Get all products
 export const getAllProducts = async (req, res) => {
   try {
-    const filters = {};
+    const filters = { isActive: true, approved: true };
 
     if (req.query.category) filters.category = req.query.category;
     if (req.query.size) filters.size = req.query.size;
@@ -96,7 +97,18 @@ export const requestSwap = async (req, res) => {
 // 6. Delete or deactivate
 export const deleteProduct = async (req, res) => {
   try {
-    await Product.findByIdAndUpdate(req.params.id, { isActive: false });
+    const userId = req.body.userId;
+    const product = await Product.findById(req.params.id);
+    if (!product || product.owner.toString() !== userId) {
+      return res.status(403).json({ error: "Not authorized" });
+    }
+    // Instead of deleting, we deactivate
+    if (product.status === "redeemed") {
+      return res.status(400).json({ error: "Cannot delete redeemed product" });
+    }
+    // Deactivate product
+    product.isActive = false;
+    await product.save();
     res.json({ message: "Product deactivated" });
   } catch (err) {
     res.status(500).json({ error: err.message });

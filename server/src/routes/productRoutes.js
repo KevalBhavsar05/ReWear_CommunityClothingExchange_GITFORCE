@@ -6,13 +6,14 @@ import {
   getProductById,
   redeemProduct,
   requestSwap,
-  deleteProduct
+  deleteProduct,
 } from "../controllers/productContorller.js";
+import { authMiddleware } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
 // 👉 Use multer here for uploading
-router.post("/", upload.array("images", 4), createProduct); // max 4 images
+router.post("/", upload.array("images", 4), authMiddleware,createProduct); // max 4 images
 router.get("/", getAllProducts);
 router.get("/:id", getProductById);
 router.patch("/:id/redeem", redeemProduct);

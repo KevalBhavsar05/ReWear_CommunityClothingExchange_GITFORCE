@@ -5,13 +5,15 @@ import fs from "fs";
 // Define storage logic
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    const userId = req.body.owner; // 🧠 `owner` must be sent from frontend
+    const userId = req.query.owner; // 🧠 `owner` must be sent from frontend
     const folderPath = `uploads/${userId}`;
 
     // Create user folder if not exists
     if (!fs.existsSync(folderPath)) {
       fs.mkdirSync(folderPath, { recursive: true });
     }
+    console.log(userId);
+    
 
     cb(null, folderPath);
   },

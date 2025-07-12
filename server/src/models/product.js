@@ -1,10 +1,11 @@
 import mongoose from "mongoose";
 
 const productSchema = new mongoose.Schema({
+  approved: { type: Boolean, default: false },
   title: String,
   description: String,
   category: String,
-  type: { default: "cloth" },
+  type: { type: String, default: "clothing" },
   size: String,
   images: [String], // URLs
   condition: String,
