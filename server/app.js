@@ -4,26 +4,39 @@ import connectDb from "./config/config.js";
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import authRoutes from "./src/routes/authRoutes.js";
 
 const app = express();
+
 app.use(
   cors({
-    origin: "http://localhost:5000",
+    origin: ["http://localhost:3000", "http://localhost:5173"],
     credentials: true,
   })
 );
 
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.json({ limit: "10mb" }));
 
 connectDb();
 
-app.use("/", (req, res) => {
-  res.send("Welcome to the ReWear-CommunityClothingExchange");
+app.use("/api/auth", authRoutes);
+
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Welcome to ReWear - Community Clothing Exchange API",
+    version: "1.0.0",
+    endpoints: {
+      auth: "/api/auth",
+    },
+  });
 });
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`ReWear server is running on port ${PORT}`);
+  console.log(`API available at http://localhost:${PORT}`);
 });
