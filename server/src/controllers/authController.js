@@ -25,8 +25,14 @@ export const register = async (req, res) => {
 
   try {
     const hashedPassword = await bcrypt.hash(password, 10);
-    const user = new User({ name, email, password: hashedPassword });
-
+    const user = new User({
+      name,
+      email,
+      password: hashedPassword,
+      city,
+      country,
+    });
+    
     const mailData = {
       from: `"AuthSystem" <${process.env.SENDER_EMAIL}>`,
       to: email,

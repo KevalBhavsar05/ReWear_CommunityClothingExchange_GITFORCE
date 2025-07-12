@@ -1,11 +1,11 @@
 import dotenv from "dotenv";
-dotenv.config({ path: "./.env.local" });
+dotenv.config({ path: "./.env" });
 import connectDb from "./config/config.js";
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import authRoutes from "./src/routes/authRoutes.js";
-
+import productRoutes from "./src/routes/productRoutes.js";
 const app = express();
 
 app.use(
@@ -18,10 +18,12 @@ app.use(
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ limit: "10mb" }));
+app.use("/uploads", express.static("uploads"));
 
 connectDb();
 
 app.use("/api/auth", authRoutes);
+app.use("/api/products", productRoutes);
 
 app.get("/", (req, res) => {
   res.json({
@@ -33,7 +35,6 @@ app.get("/", (req, res) => {
     },
   });
 });
-
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
