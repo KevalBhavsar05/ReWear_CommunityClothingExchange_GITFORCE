@@ -32,7 +32,7 @@ export const register = async (req, res) => {
       city,
       country,
     });
-    
+
     const mailData = {
       from: `"AuthSystem" <${process.env.SENDER_EMAIL}>`,
       to: email,
@@ -89,7 +89,7 @@ export const login = async (req, res) => {
     if (!user) {
       return res.json({
         success: false,
-        message: "Invalid email or passoword",
+        message: "Invalid email or password",
       });
     }
 
@@ -99,6 +99,20 @@ export const login = async (req, res) => {
     }
 
     const token = genToken(user._id);
+    
+    // Create user object without password
+    const userResponse = {
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      city: user.city,
+      country: user.country,
+      points: user.points,
+      isAdmin: user.isAdmin,
+      createdAt: user.createdAt,
+      updatedAt: user.updatedAt
+    };
+
     return res
       .cookie("token", token, {
         httpOnly: true,
@@ -106,7 +120,12 @@ export const login = async (req, res) => {
         sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
         maxAge: 24 * 60 * 60 * 1000, //1day
       })
-      .json({ success: true, message: "Logged in successfully", token: token });
+      .json({ 
+        success: true, 
+        message: "Logged in successfully", 
+        token: token,
+        user: userResponse
+      });
   } catch (e) {
     console.log(e.message);
     return res.json({
@@ -124,6 +143,7 @@ export const logout = (req, res) => {
     })
     .json({ success: true, message: "Logged out successfully" });
 };
+
 //Send-Reset-Password-Otp
 export const sendResetPassOtp = async (req, res) => {
   try {
@@ -245,5 +265,18 @@ export const resetPassword = async (req, res) => {
       success: false,
       message: e.message,
     });
+  }
+};
+
+export const getUserData = async (req, res) => {
+  try {
+    const user = await User.findById(req.user._id).select("-password");
+    if (!user) {
+      return res.json({ success: false, message: "User not found" });
+    }
+    return res.json({ success: true, user });
+  } catch (e) {
+    console.error(e);
+    return res.json({ success: false, message: e.message });
   }
 };

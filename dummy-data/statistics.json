@@ -1,0 +1,98 @@
+{
+  "statistics": {
+    "overview": {
+      "totalUsers": 8,
+      "totalItems": 10,
+      "totalSwaps": 4,
+      "totalPointsRedeemed": 305,
+      "activeListings": 7,
+      "pendingApprovals": 3
+    },
+    "userStats": {
+      "newUsersThisMonth": 3,
+      "activeUsersThisWeek": 6,
+      "topContributors": [
+        {
+          "name": "John Doe",
+          "itemsUploaded": 2,
+          "pointsEarned": 150
+        },
+        {
+          "name": "Jane Smith",
+          "itemsUploaded": 2,
+          "pointsEarned": 85
+        },
+        {
+          "name": "Mike Johnson",
+          "itemsUploaded": 2,
+          "pointsEarned": 200
+        }
+      ]
+    },
+    "itemStats": {
+      "byCategory": {
+        "Tops": 4,
+        "Bottoms": 1,
+        "Dresses": 1,
+        "Outerwear": 2,
+        "Shoes": 1,
+        "Accessories": 2,
+        "Other": 0
+      },
+      "byCondition": {
+        "New": 2,
+        "Like New": 4,
+        "Good": 4,
+        "Used": 0
+      },
+      "byType": {
+        "Swap": 5,
+        "Points": 5
+      }
+    },
+    "swapStats": {
+      "totalRequests": 4,
+      "acceptedSwaps": 1,
+      "rejectedSwaps": 1,
+      "pendingSwaps": 2,
+      "successRate": 25
+    },
+    "pointsStats": {
+      "totalPointsInCirculation": 500,
+      "totalPointsRedeemed": 305,
+      "averagePointsPerItem": 75,
+      "mostExpensiveItem": {
+        "title": "Silver Watch",
+        "points": 120
+      }
+    },
+    "locationStats": {
+      "byCity": {
+        "Mumbai": 3,
+        "Delhi": 3,
+        "Bangalore": 3,
+        "Ahmedabad": 1
+      },
+      "byCountry": {
+        "India": 10
+      }
+    },
+    "trends": {
+      "monthlyGrowth": {
+        "January": 5,
+        "February": 10,
+        "March": 10
+      },
+      "popularCategories": [
+        "Tops",
+        "Outerwear",
+        "Accessories"
+      ],
+      "popularSizes": [
+        "M",
+        "L",
+        "One Size"
+      ]
+    }
+  }
+} 

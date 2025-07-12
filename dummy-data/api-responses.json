@@ -1,0 +1,239 @@
+{
+  "apiResponses": {
+    "login": {
+      "success": true,
+      "message": "Logged in successfully",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+      "user": {
+        "_id": "507f1f77bcf86cd799439011",
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "city": "Mumbai",
+        "country": "India",
+        "points": 150,
+        "isAdmin": false,
+        "createdAt": "2024-01-15T10:30:00.000Z",
+        "updatedAt": "2024-01-15T10:30:00.000Z"
+      }
+    },
+    "register": {
+      "success": true,
+      "message": "Registered successfully",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+      "user": {
+        "_id": "507f1f77bcf86cd799439019",
+        "name": "New User",
+        "email": "newuser@example.com",
+        "city": "Delhi",
+        "country": "India",
+        "points": 30,
+        "isAdmin": false,
+        "createdAt": "2024-03-01T12:00:00.000Z",
+        "updatedAt": "2024-03-01T12:00:00.000Z"
+      }
+    },
+    "getUserData": {
+      "success": true,
+      "user": {
+        "_id": "507f1f77bcf86cd799439011",
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "city": "Mumbai",
+        "country": "India",
+        "points": 150,
+        "isAdmin": false,
+        "createdAt": "2024-01-15T10:30:00.000Z",
+        "updatedAt": "2024-01-15T10:30:00.000Z"
+      }
+    },
+    "getAllItems": {
+      "success": true,
+      "items": [
+        {
+          "_id": "507f1f77bcf86cd799439021",
+          "title": "Blue Denim Jacket",
+          "description": "Classic blue denim jacket in excellent condition.",
+          "category": "Outerwear",
+          "type": "Swap",
+          "size": "M",
+          "condition": "Like New",
+          "points": 0,
+          "images": ["denim_jacket_1.jpg", "denim_jacket_2.jpg"],
+          "tags": ["denim", "jacket", "casual", "blue"],
+          "owner": {
+            "_id": "507f1f77bcf86cd799439011",
+            "name": "John Doe"
+          },
+          "isAvailable": true,
+          "isApproved": true,
+          "location": {
+            "city": "Mumbai",
+            "country": "India"
+          },
+          "createdAt": "2024-01-20T10:30:00.000Z",
+          "updatedAt": "2024-01-20T10:30:00.000Z"
+        }
+      ],
+      "pagination": {
+        "currentPage": 1,
+        "totalPages": 3,
+        "totalItems": 10,
+        "hasNext": true,
+        "hasPrev": false
+      }
+    },
+    "getItem": {
+      "success": true,
+      "item": {
+        "_id": "507f1f77bcf86cd799439021",
+        "title": "Blue Denim Jacket",
+        "description": "Classic blue denim jacket in excellent condition. Perfect for casual wear and layering. Size M fits true to size.",
+        "category": "Outerwear",
+        "type": "Swap",
+        "size": "M",
+        "condition": "Like New",
+        "points": 0,
+        "images": ["denim_jacket_1.jpg", "denim_jacket_2.jpg"],
+        "tags": ["denim", "jacket", "casual", "blue"],
+        "owner": {
+          "_id": "507f1f77bcf86cd799439011",
+          "name": "John Doe",
+          "city": "Mumbai",
+          "country": "India",
+          "points": 150
+        },
+        "isAvailable": true,
+        "isApproved": true,
+        "location": {
+          "city": "Mumbai",
+          "country": "India"
+        },
+        "createdAt": "2024-01-20T10:30:00.000Z",
+        "updatedAt": "2024-01-20T10:30:00.000Z"
+      }
+    },
+    "createItem": {
+      "success": true,
+      "message": "Item created successfully",
+      "item": {
+        "_id": "507f1f77bcf86cd799439031",
+        "title": "New Item",
+        "description": "Description of the new item",
+        "category": "Tops",
+        "type": "Swap",
+        "size": "L",
+        "condition": "Good",
+        "points": 0,
+        "images": ["new_item_1.jpg"],
+        "tags": ["new", "item"],
+        "owner": "507f1f77bcf86cd799439011",
+        "isAvailable": true,
+        "isApproved": false,
+        "location": {
+          "city": "Mumbai",
+          "country": "India"
+        },
+        "createdAt": "2024-03-01T12:00:00.000Z",
+        "updatedAt": "2024-03-01T12:00:00.000Z"
+      }
+    },
+    "getUserItems": {
+      "success": true,
+      "items": [
+        {
+          "_id": "507f1f77bcf86cd799439021",
+          "title": "Blue Denim Jacket",
+          "description": "Classic blue denim jacket in excellent condition.",
+          "category": "Outerwear",
+          "type": "Swap",
+          "size": "M",
+          "condition": "Like New",
+          "points": 0,
+          "images": ["denim_jacket_1.jpg", "denim_jacket_2.jpg"],
+          "tags": ["denim", "jacket", "casual", "blue"],
+          "isAvailable": true,
+          "isApproved": true,
+          "createdAt": "2024-01-20T10:30:00.000Z",
+          "updatedAt": "2024-01-20T10:30:00.000Z"
+        }
+      ]
+    },
+    "getPendingItems": {
+      "success": true,
+      "items": [
+        {
+          "_id": "507f1f77bcf86cd799439028",
+          "title": "White Blouse",
+          "description": "Elegant white blouse suitable for office wear.",
+          "category": "Tops",
+          "type": "Swap",
+          "size": "M",
+          "condition": "New",
+          "points": 0,
+          "images": ["blouse_1.jpg"],
+          "tags": ["blouse", "white", "office", "elegant"],
+          "owner": {
+            "_id": "507f1f77bcf86cd799439011",
+            "name": "John Doe"
+          },
+          "isAvailable": true,
+          "isApproved": false,
+          "createdAt": "2024-02-18T12:00:00.000Z",
+          "updatedAt": "2024-02-18T12:00:00.000Z"
+        }
+      ]
+    },
+    "approveItem": {
+      "success": true,
+      "message": "Item approved successfully",
+      "item": {
+        "_id": "507f1f77bcf86cd799439028",
+        "title": "White Blouse",
+        "isApproved": true,
+        "updatedAt": "2024-03-01T12:00:00.000Z"
+      }
+    },
+    "rejectItem": {
+      "success": true,
+      "message": "Item rejected and deleted successfully"
+    },
+    "requestSwap": {
+      "success": true,
+      "message": "Swap request sent successfully"
+    },
+    "redeemWithPoints": {
+      "success": true,
+      "message": "Item redeemed successfully"
+    },
+    "errorResponses": {
+      "invalidCredentials": {
+        "success": false,
+        "message": "Invalid email or password"
+      },
+      "userNotFound": {
+        "success": false,
+        "message": "User not found"
+      },
+      "itemNotFound": {
+        "success": false,
+        "message": "Item not found"
+      },
+      "insufficientPoints": {
+        "success": false,
+        "message": "Insufficient points"
+      },
+      "unauthorized": {
+        "success": false,
+        "message": "Not authorized to perform this action"
+      },
+      "validationError": {
+        "success": false,
+        "message": "All required fields must be provided"
+      },
+      "serverError": {
+        "success": false,
+        "message": "Internal server error"
+      }
+    }
+  }
+} 

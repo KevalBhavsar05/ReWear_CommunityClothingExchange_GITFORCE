@@ -1,0 +1,96 @@
+{
+  "swapRequests": [
+    {
+      "_id": "507f1f77bcf86cd799439051",
+      "requestedItem": {
+        "_id": "507f1f77bcf86cd799439021",
+        "title": "Blue Denim Jacket"
+      },
+      "offeredItem": {
+        "_id": "507f1f77bcf86cd799439022",
+        "title": "Vintage Graphic Tee"
+      },
+      "requester": {
+        "_id": "507f1f77bcf86cd799439012",
+        "name": "Jane Smith"
+      },
+      "itemOwner": {
+        "_id": "507f1f77bcf86cd799439011",
+        "name": "John Doe"
+      },
+      "status": "pending",
+      "message": "I love this jacket! I can offer my vintage graphic tee in exchange. It's in great condition and would be a fair swap.",
+      "createdAt": "2024-02-25T10:30:00.000Z",
+      "updatedAt": "2024-02-25T10:30:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439052",
+      "requestedItem": {
+        "_id": "507f1f77bcf86cd799439023",
+        "title": "Black Sneakers"
+      },
+      "offeredItem": {
+        "_id": "507f1f77bcf86cd799439024",
+        "title": "Floral Summer Dress"
+      },
+      "requester": {
+        "_id": "507f1f77bcf86cd799439014",
+        "name": "Sarah Wilson"
+      },
+      "itemOwner": {
+        "_id": "507f1f77bcf86cd799439013",
+        "name": "Mike Johnson"
+      },
+      "status": "accepted",
+      "message": "These sneakers would be perfect for my daily walks. I can offer my floral summer dress in exchange.",
+      "createdAt": "2024-02-26T14:15:00.000Z",
+      "updatedAt": "2024-02-27T09:45:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439053",
+      "requestedItem": {
+        "_id": "507f1f77bcf86cd799439025",
+        "title": "Leather Handbag"
+      },
+      "offeredItem": {
+        "_id": "507f1f77bcf86cd799439026",
+        "title": "Slim Fit Jeans"
+      },
+      "requester": {
+        "_id": "507f1f77bcf86cd799439017",
+        "name": "Emma Davis"
+      },
+      "itemOwner": {
+        "_id": "507f1f77bcf86cd799439016",
+        "name": "Alex Brown"
+      },
+      "status": "rejected",
+      "message": "I really need a good handbag for work. I can offer my slim fit jeans in exchange.",
+      "createdAt": "2024-02-28T11:20:00.000Z",
+      "updatedAt": "2024-02-28T16:30:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439054",
+      "requestedItem": {
+        "_id": "507f1f77bcf86cd799439027",
+        "title": "Wool Sweater"
+      },
+      "offeredItem": {
+        "_id": "507f1f77bcf86cd799439028",
+        "title": "White Blouse"
+      },
+      "requester": {
+        "_id": "507f1f77bcf86cd799439018",
+        "name": "David Miller"
+      },
+      "itemOwner": {
+        "_id": "507f1f77bcf86cd799439017",
+        "name": "Emma Davis"
+      },
+      "status": "pending",
+      "message": "This sweater looks perfect for the winter. I can offer my white blouse in exchange.",
+      "createdAt": "2024-03-01T13:45:00.000Z",
+      "updatedAt": "2024-03-01T13:45:00.000Z"
+    }
+  ]
+} 

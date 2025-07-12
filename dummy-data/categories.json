@@ -1,0 +1,67 @@
+{
+  "categories": [
+    {
+      "_id": "507f1f77bcf86cd799439041",
+      "name": "Tops",
+      "icon": "👕",
+      "description": "Shirts, t-shirts, blouses, sweaters, and other upper body clothing",
+      "color": "bg-blue-50",
+      "itemCount": 4,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439042",
+      "name": "Bottoms",
+      "icon": "👖",
+      "description": "Pants, jeans, skirts, shorts, and other lower body clothing",
+      "color": "bg-indigo-50",
+      "itemCount": 1,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439043",
+      "name": "Dresses",
+      "icon": "👗",
+      "description": "Complete dresses for various occasions",
+      "color": "bg-pink-50",
+      "itemCount": 1,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439044",
+      "name": "Outerwear",
+      "icon": "🧥",
+      "description": "Jackets, coats, hoodies, and other outer layers",
+      "color": "bg-gray-50",
+      "itemCount": 2,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439045",
+      "name": "Shoes",
+      "icon": "👟",
+      "description": "Footwear including sneakers, formal shoes, and boots",
+      "color": "bg-green-50",
+      "itemCount": 1,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439046",
+      "name": "Accessories",
+      "icon": "👜",
+      "description": "Bags, watches, jewelry, belts, and other accessories",
+      "color": "bg-purple-50",
+      "itemCount": 2,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439047",
+      "name": "Other",
+      "icon": "🎽",
+      "description": "Miscellaneous clothing and fashion items",
+      "color": "bg-yellow-50",
+      "itemCount": 0,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    }
+  ]
+} 

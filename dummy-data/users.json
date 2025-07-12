@@ -1,0 +1,100 @@
+{
+  "users": [
+    {
+      "_id": "507f1f77bcf86cd799439011",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "password": "$2b$10$hashedpassword123",
+      "city": "Mumbai",
+      "country": "India",
+      "points": 150,
+      "isAdmin": false,
+      "createdAt": "2024-01-15T10:30:00.000Z",
+      "updatedAt": "2024-01-15T10:30:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439012",
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "password": "$2b$10$hashedpassword456",
+      "city": "Delhi",
+      "country": "India",
+      "points": 85,
+      "isAdmin": false,
+      "createdAt": "2024-01-20T14:45:00.000Z",
+      "updatedAt": "2024-01-20T14:45:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439013",
+      "name": "Mike Johnson",
+      "email": "mike.johnson@example.com",
+      "password": "$2b$10$hashedpassword789",
+      "city": "Bangalore",
+      "country": "India",
+      "points": 200,
+      "isAdmin": false,
+      "createdAt": "2024-01-25T09:15:00.000Z",
+      "updatedAt": "2024-01-25T09:15:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439014",
+      "name": "Sarah Wilson",
+      "email": "sarah.wilson@example.com",
+      "password": "$2b$10$hashedpassword101",
+      "city": "Ahmedabad",
+      "country": "India",
+      "points": 120,
+      "isAdmin": false,
+      "createdAt": "2024-02-01T16:20:00.000Z",
+      "updatedAt": "2024-02-01T16:20:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439015",
+      "name": "Admin User",
+      "email": "admin@rewear.com",
+      "password": "$2b$10$hashedpasswordadmin",
+      "city": "Mumbai",
+      "country": "India",
+      "points": 500,
+      "isAdmin": true,
+      "createdAt": "2024-01-01T08:00:00.000Z",
+      "updatedAt": "2024-01-01T08:00:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439016",
+      "name": "Alex Brown",
+      "email": "alex.brown@example.com",
+      "password": "$2b$10$hashedpassword202",
+      "city": "Delhi",
+      "country": "India",
+      "points": 75,
+      "isAdmin": false,
+      "createdAt": "2024-02-05T11:30:00.000Z",
+      "updatedAt": "2024-02-05T11:30:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439017",
+      "name": "Emma Davis",
+      "email": "emma.davis@example.com",
+      "password": "$2b$10$hashedpassword303",
+      "city": "Bangalore",
+      "country": "India",
+      "points": 180,
+      "isAdmin": false,
+      "createdAt": "2024-02-10T13:45:00.000Z",
+      "updatedAt": "2024-02-10T13:45:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439018",
+      "name": "David Miller",
+      "email": "david.miller@example.com",
+      "password": "$2b$10$hashedpassword404",
+      "city": "Ahmedabad",
+      "country": "India",
+      "points": 95,
+      "isAdmin": false,
+      "createdAt": "2024-02-15T15:20:00.000Z",
+      "updatedAt": "2024-02-15T15:20:00.000Z"
+    }
+  ]
+} 

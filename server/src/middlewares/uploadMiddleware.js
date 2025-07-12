@@ -5,16 +5,21 @@ import fs from "fs";
 // Define storage logic
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    const userId = req.query.owner; // 🧠 `owner` must be sent from frontend
+    // Get user ID from authenticated user or request body
+    const userId = req.user?._id || req.body.owner;
+    
+    if (!userId) {
+      return cb(new Error("User not authenticated or owner ID missing"));
+    }
+    
     const folderPath = `uploads/${userId}`;
 
     // Create user folder if not exists
     if (!fs.existsSync(folderPath)) {
       fs.mkdirSync(folderPath, { recursive: true });
     }
-    console.log(userId);
     
-
+    console.log(`Uploading to folder: ${folderPath}`);
     cb(null, folderPath);
   },
 
@@ -29,15 +34,23 @@ const storage = multer.diskStorage({
 const fileFilter = (req, file, cb) => {
   const allowedTypes = /jpeg|jpg|png|webp/;
   const extName = allowedTypes.test(path.extname(file.originalname).toLowerCase());
-  if (extName) cb(null, true);
-  else cb(new Error("Only image files are allowed!"));
+  const mimeType = allowedTypes.test(file.mimetype);
+  
+  if (extName && mimeType) {
+    cb(null, true);
+  } else {
+    cb(new Error("Only image files (jpeg, jpg, png, webp) are allowed!"), false);
+  }
 };
 
 // Init upload
 const upload = multer({
   storage: storage,
   fileFilter: fileFilter,
-  limits: { fileSize: 5 * 1024 * 1024 }, // Max 5MB
+  limits: { 
+    fileSize: 5 * 1024 * 1024, // Max 5MB
+    files: 5 // Max 5 files
+  },
 });
 
 export default upload;
